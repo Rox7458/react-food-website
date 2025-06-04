@@ -1,6 +1,6 @@
 import AppRouter from "./router/AppRouter";
 import RecipeProvider from "./context/RecipeProvider";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
