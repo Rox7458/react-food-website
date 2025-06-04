@@ -10,7 +10,11 @@ const Home = () => {
   console.log("food", food);
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className={`transition-colors ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-slate-800"}`}>
+      <div
+        className={`transition-colors ${
+          darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-slate-800"
+        }`}
+      >
         <Header />
 
         {food.length > 0 ? (
