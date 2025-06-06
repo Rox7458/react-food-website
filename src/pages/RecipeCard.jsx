@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const RecipeCard = () => {
   const { food, darkMode } = useContext(RecipeContext);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   console.log(food);
 
@@ -19,12 +19,11 @@ const RecipeCard = () => {
           >
             <img src={recipe.strMealThumb} alt="" />
             <div className="p-4">
-              <p className="text-gray-800 dark:text-white">
-                {recipe.strMeal}
-              </p>
-              <button 
-              onClick={()=>navigate("/app/details", {state:{recipe}}) }
-              className="mt-4 bg-orange-300 py-2 px-4 w-full rounded-xl">
+              <p className="text-gray-800 dark:text-white">{recipe.strMeal}</p>
+              <button
+                onClick={() => navigate("/app/details", { state: { recipe } })}
+                className="mt-4 bg-orange-300 py-2 px-4 w-full rounded-xl"
+              >
                 Details
               </button>
             </div>

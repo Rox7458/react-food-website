@@ -1,21 +1,19 @@
-import { useContext } from "react"
-import { RecipeContext } from "../context/RecipeProvider"
-import { useNavigate } from "react-router-dom"
+import { useContext } from "react";
+import { RecipeContext } from "../context/RecipeProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
+  const { username, setUsername, password, setPassword } = useContext(RecipeContext);
+  const navigate = useNavigate();
 
-  const {username,setUsername,password,setPassword}=useContext(RecipeContext)
-  const navigate=useNavigate()
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit=(e)=>{
-    e.preventDefault()
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
 
-    localStorage.setItem("username",username)
-    localStorage.setItem("password",password)
-
-    navigate("/app")
- 
-  }
+    navigate("/app");
+  };
 
   return (
     <>
@@ -45,10 +43,8 @@ export default function SignIn() {
                   required
                   autoComplete="username"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  onChange={(e)=>setUsername(e.target.value)}
-
-               
-               />
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
             </div>
 
@@ -71,15 +67,13 @@ export default function SignIn() {
                   required
                   autoComplete="current-password"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  onChange={(e)=>setPassword(e.target.value)}
-
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
 
             <div>
               <button
-            
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
@@ -89,7 +83,7 @@ export default function SignIn() {
           </form>
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
-            Not a member?{' '}
+            Not a member?{" "}
             <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Start a 14 day free trial
             </a>
@@ -97,6 +91,5 @@ export default function SignIn() {
         </div>
       </div>
     </>
-  )
+  );
 }
-

@@ -4,12 +4,8 @@ import axios from "axios";
 export const RecipeContext = createContext();
 
 const RecipeProvider = ({ children }) => {
-  const [username, setUsername] = useState(
-    localStorage.getItem("username") || ""
-  );
-  const [password, setPassword] = useState(
-    localStorage.getItem("password") || ""
-  );
+  const [username, setUsername] = useState(localStorage.getItem("username") || "");
+  const [password, setPassword] = useState(localStorage.getItem("password") || "");
 
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => setDarkMode((prev) => !prev);
@@ -42,10 +38,11 @@ const RecipeProvider = ({ children }) => {
   };
 
   if (loading) {
-    return(
-    <div className="flex justify-center items-center h-24">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-600"></div>
-    </div>)
+    return (
+      <div className="flex justify-center items-center h-24">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-600"></div>
+      </div>
+    );
   }
 
   return (

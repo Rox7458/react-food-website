@@ -1,9 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate, Outlet } from "react-router-dom";
 import SignIn from "../pages/SignIn";
 import NotFound from "../pages/NotFound";
 import Details from "../pages/Details";
@@ -12,37 +7,38 @@ import Layout from "../pages/Layout";
 import PrivateRouter from "./PrivateRouter";
 import About from "../pages/About";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
-    path:"/app",
-    element: <PrivateRouter/>,  //! Yetki kontrolü - Giriş kontrolü
-    children:[
+    path: "/app",
+    element: <PrivateRouter />,
+    children: [
       {
-        element: <Layout/>,  // Layout altında görünecek sayfaları tanımlıyoruz
-        children:[
+        element: <Layout />,
+        children: [
           {
-            index:true,
-            element:  <Home/>
+            index: true,
+            element: <Navigate to="home" replace />,
           },
-            {
-            path:"about",
-            element: <About/>
+          {
+            path: "home",
+            element: <Home />,
           },
-              {
-            path:"details",
-            element: <Details/>
+          {
+            path: "about",
+            element: <About />,
           },
-
-        ]
-      }
-
-    ]
-  }
+          {
+            path: "details",
+            element: <Details />,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 export default function AppRouter() {
