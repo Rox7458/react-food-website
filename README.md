@@ -1,7 +1,7 @@
 # Food Website
 
-Login    : ozy
-Password : 123
+- Login    : ozy
+- Password : 123
 
 The website presents foods in list.
 
