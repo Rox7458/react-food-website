@@ -1,12 +1,35 @@
-# React + Vite
+# Food Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Login    : ozy
+Password : 123
 
-Currently, two official plugins are available:
+The website presents foods in list.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Project Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project showcases:
+
+- Shows searched foods and details in itself.
+
+## Features
+
+- **Content Sections:**
+  - **Recipe:** Displays the foods that user want to search.
+  - **About:** Displays the developer that made up and.
+  - **Github:** Display The github of the course that lessons has been taken.
+
+
+## Preview
+
+Here’s a preview of the project in action:
+
+![alt text](REC-20250608192301-ezgif.com-video-to-gif-converter.gif)
+
+## Technologies Used
+
+- **USESTATE**: For updating the dom.
+- **USECONTEXT**: For transferring the data among pages.
+- **USELOCATION**: For cathing the chosen card's id and transferring .
+- **REACT**: For structuring the content.
+- **TAILWIND**: For styling.
